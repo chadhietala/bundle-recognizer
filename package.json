@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "build": "yarn run build:clean && yarn run build:lib && yarn run build:test",
+    "build:clean": "rm -rf dist",
+    "build:lib": "babel lib --out-dir dist/lib",
+    "build:test": "babel tests --out-dir dist/tests",
+    "prepublish": "yarn build",
+    "test": "yarn build  && qunit dist/**/*-test.js"
+  },
+  "dependencies": {
+    "route-recognizer": "^0.3.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.4.0",
+    "qunitjs": "^2.3.1"
+  }
+}
